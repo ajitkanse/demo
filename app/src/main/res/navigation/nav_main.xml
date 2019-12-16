@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.storiyoh.demojetpack.ui.HomeFragment"
+        android:label="home_fragment"
+        tools:layout="@layout/home_fragment" />
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.storiyoh.demojetpack.ui.onboarding.splash.SplashFragment"
+        android:label="splash_fragment"
+        tools:layout="@layout/splash_fragment" >
+        <action
+            android:id="@+id/action_splashFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.storiyoh.demojetpack.ui.onboarding.login.LoginFragment"
+        android:label="login_fragment"
+        tools:layout="@layout/login_fragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.storiyoh.demojetpack.ui.onboarding.registration.RegistrationFragment"
+        android:label="registration_fragment"
+        tools:layout="@layout/registration_fragment" >
+        <action
+            android:id="@+id/action_registrationFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+</navigation>
